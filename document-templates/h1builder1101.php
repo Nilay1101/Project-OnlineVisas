@@ -100,7 +100,7 @@
 	$section->writetext('Sincerely,', $fontR, $paraL) ;
 
 	addNewLine(3) ;
-	$section->writetext('petitioner_contact_position', $fontR, $paraL) ;
+	$section->writetext('Petitioner Position', $fontR, $paraL) ;
 	$section->writetext($petCo, $fontR, $paraL) ;
 
 	// addFooter('VLF_footer', 'center') ;

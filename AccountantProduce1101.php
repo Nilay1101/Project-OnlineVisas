@@ -5,24 +5,21 @@ function myDebug()
 	return false;
 }
 
- $getFieldLCarray = array ( "company"=>"Online Visas","firstname"=>"Ben","lastname"=>"Hunt","title"=>"Mr.", "job"=>"CTO", "citizen"=>"England", "gender"=>"M");
+$getFieldLCarray = array ( "visa_type"=>"Business Visa", "beneficiary_name_first"=>"Ben", "beneficiary_name-last"=>"Hunt","petitioner_company_name"=>"Ben Hunt Limited", "L_Int_Company"=>"Online Visas", "Companies_Relationship"=>"Business Partners",
+"L_Describe_US_Company"=>"The 24/7 asynchronous Gateway platform to all the stakeholders who can view the status of their petition processes at any time of day or night, share information, complete tasks, and even make payments.",
+"L_State_Incorp_USC"=>"Norman", "L_Date_Incorp_USC"=>"1993", "L_USC_Ownership"=>"Velie Law Firm", "L_USC_Employees"=>"Some Employees", "L_USC_Revenue"=>"Some Revenue", 
+"L_USC_Assets" => "Some Assets", "US_accountant"=>"An US Accountant", "US_accountant_firm"=>"An US Firm");
 
-	//include('functions.php') ;
-
-	//$dev_mode = ($_ENV['RDS_DB_NAME'] == 'ov-live') ? False : True ;
-
-	//if (isSet($_GET['test'])) {
 		echo '
-			<form action="produce1101.php" method="post">
-				Doc name: <input type="text" name="doc_name" value="h1builder1101"><br>
-				Case ID: <input type="text" name="case_id" value="713"><br>
-				Firm ID: <input type="text" name="firm_id" value="1"><br>
+			<form action="AccountantProduce1101.php" method="post">
+				Doc name: <input type="text" name="doc_name" value="AccountantBuilder1101"><br>
+				Case ID: <input type="text" name="case_id" value="1101"><br>
+				Firm ID: <input type="text" name="firm_id" value="13"><br>
 				File type: <input type="text" name="file_type" value="rtf"><br>
 				<input type="Submit">
 			</form>
 		' ;
-		//exit ;
-	//}
+		
 
 	if (isSet($_REQUEST['doc_name'])) {
 		$doc_name = $_REQUEST['doc_name'] ;
@@ -75,41 +72,6 @@ function myDebug()
 	$tempFilename =  $doc_name . '.' . $file_type ;
 	myDebug('Temporary filename = ' . $tempFilename) ; 
 
-	// Common content
-	                                                                                                                       //$petLogo = getFieldLC('petitioner_logo') ;
-	$petCo = $getFieldLCarray['company'] ;
-	// Beneficiary name formats
-	$benNames = $getFieldLCarray['firstname'] . ' ' . $getFieldLCarray['lastname'] ;
-	$benTitle = $getFieldLCarray['title'];
-	// Add a space if we know title.
-	if ($benTitle) $benTitle = trim($benTitle) . ' ' ;
-	$benShort = $benTitle . $getFieldLCarray['firstname'] ;
-	$benFull = $benNames;
-	$jobTitle = $getFieldLCarray['job'];
-	$benCitizen = $getFieldLCarray['citizen'] ;
-	$benGender = $getFieldLCarray['gender'] ;
-	switch (strtoupper($benGender)) {
-		case 'M' :
-			$genderSubject = 'he' ;
-			$genderObject = 'him' ;
-			$genderPossessive = 'his' ;
-			$genderIsAre = 'is' ;
-			break ;
-		case 'F' :
-			$genderSubject = 'she' ;
-			$genderObject = 'her' ;
-			$genderPossessive = 'her' ;
-			$genderIsAre = 'is' ;
-			break ;
-		default :
-			$genderSubject = 'they' ;
-			$genderObject = 'them' ;
-			$genderPossessive = 'their' ;
-			$genderIsAre = 'are' ;
-			break ;
-	}
-	// End common content
-
 	switch ($file_type) {
 
 		case 'html' :
@@ -137,7 +99,6 @@ function myDebug()
 			$rtf = new PHPRtfLite() ;
 			setlocale(LC_MONETARY, 'en_US') ; // May be overridden
 			$money_template = '%(#10n' ;
-			//$firmFullName = getFirmCustomField($firm_id, 'firm_full_name') ;
 			$firmFullName = 'Online Visas' ;
 
 			// Set up font styles
@@ -216,25 +177,6 @@ function myDebug()
 	
     $localPath = $dir = dirname(__FILE__) . '/' . $tempFilename ;
 	myDebug('Local path = ' . $localPath) ;
-
-
-	/* // Save to S3
-    require('S3.php') ;
-    $s3 = new S3($awsAccessKey, $awsSecretKey) ;
-    try {
-    	@S3::putObject( S3::inputFile($localPath, false), $awsCaseDocumentsBucket, $tempFilename, S3::ACL_PUBLIC_READ) ;
-    }
-    catch (S3Exception $oops) {
-    	echo 'Error: Failed to save to secure storage.' ;
-    	exit ;
-    }
-    myDebug('Saved OK to S3.') ;
-
-    // Success
-    // Bump the index number
-    $S3_full_path = $awsRoot . '/' . $awsCaseDocumentsBucket . '/' . $tempFilename ;
-    bumpCaseDocIndex($case_id, $doc_name, $latestIndex, $S3_full_path) ; */
-	
 	$rtf->save('production.rtf');
     
     // Delete local file
@@ -271,44 +213,6 @@ function myDebug()
 		}
 	}
 
-	/*function getFieldLC($linkcode, $returnAll = False) {
-		// Gets the first value found for a specific link code
-		GLOBAL $case_id ;
-		$SQL_get_field = 'SELECT value
-			FROM tPetitionSteps
-			WHERE value != ""
-			AND petition_id = ' . $case_id . '
-			AND 
-				(
-					link_code = "' . trim($linkcode) . '"
-					OR link_code LIKE "' . trim($linkcode) . '_#%"
-				)
-			' ;
-		if ($returnAll)
-		{
-			$SQL_get_field .= ' ORDER BY sort_order ' ;
-		}
-		else
-		{
-			$SQL_get_field .= ' LIMIT 1 ' ;
-		}
-		
-		$RES_get_field = runSQL($SQL_get_field) ;
-		if ($returnAll) {
-			$fieldValues = array() ;
-			while ($posText = $RES_get_field->fetch_assoc() ) {
-				$fieldValues[] = $posText['value'] ;
-			}
-			return $fieldValues ;
-		}
-		else if (mysqli_num_rows($RES_get_field) == 1) {
-			$ROW_get_field = $RES_get_field->fetch_assoc() ;
-			return trim($ROW_get_field['value']) ;
-		}
-		else {
-			return Null ;
-		}
-	} */
 
 	function addFooter($snippet, $paraAlign = Null, $style = Null) {
 		GLOBAL $section ;
@@ -577,7 +481,7 @@ function myDebug()
 
 	function showDate() {
 		GLOBAL $section, $fontB, $fontR, $fontT, $paraL, $paraR, $dev_mode ;
-		$section->writeText(date('F d, Y'), $fontR, $paraR) ;
+		$section->writeText(date('F d, Y'), $fontR, $paraL) ;
 	}
 
 ?>
