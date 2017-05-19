@@ -5,10 +5,9 @@ function myDebug()
 	return false;
 }
 
-
 		echo '
-			<form action="USEmploymentProduce1101.php" method="post">
-				Doc name: <input type="text" name="doc_name" value="USEmploymentBuilder1101"><br>
+			<form action="AccountantFProduce1101.php" method="post">
+				Doc name: <input type="text" name="doc_name" value="AccountantFBuilder1101"><br>
 				Case ID: <input type="text" name="case_id" value="1101"><br>
 				Firm ID: <input type="text" name="firm_id" value="13"><br>
 				File type: <input type="text" name="file_type" value="rtf"><br>
@@ -483,12 +482,9 @@ function myDebug()
 	function getFieldLC($linknode, $returnAll = False)
 	{
 		global $getFieldLCarray;
-	
-$getFieldLCarray = array ( "US_employment_letter_signator"=>"Ben Hunt","Title_US_employment_letter_signator"=>"CTO", "petitioner_company_name"=>"Online Visas", 
-"L_Describe_US_Company"=>"The 24/7 asynchronous Gateway platform to all the stakeholders who can view the status of their petition processes at any time of day or night, share information, complete tasks, and even make payments.",
-"beneficiary_name_first"=>"Nilay", "beneficiary_name_last"=>"Jayswal", "L_Beneficiary's_US_Position"=>"Junior Developer",
-"L_Category_Duty_USC_1"=>"Duty Summary1", "L_Category_Duty_USC_2"=>"Duty Summary2", "L_Category_Duty_USC_3"=>"Duty Summary3",
-"beneficiary_title"=>"Mr.", "L_Beneficiary's_term_employment"=>"102 Weeks", "L_Beneficiary's_Salary"=>"2000 USD per month");
+
+$getFieldLCarray = array ( "l_int_company"=>"White & Case LLP", "l_describe_intl_company"=>"White & Case is an international law firm that serves companies, governments and financial institutions. Our long history as a global firm means we are uniquely placed to help our clients resolve their most complex legal challenges wherever they are.", "petitioner_company_name"=>"Velie Law Firm", "companies_relationship"=>"Business Partners", "l_ic_ownership"=>"Hugh Verrier", "l_usc_ownership"=>"Jon Velie", "l_ic_revenues"=>"Some Revenues", "l_ic_assets"=>"Some Assets", "l_ic_employees"=>"Some Employees", "intl_accountant"=>"Ania Steel", "intl_accountant_firm"=>"White & Case LLP" );
+
 		
 		return $getFieldLCarray[$linknode];
 	}

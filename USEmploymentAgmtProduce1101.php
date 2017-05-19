@@ -5,11 +5,6 @@ function myDebug()
 	return false;
 }
 
-$getFieldLCarray = array ( "petitioner_company_name"=>"Online Visas", "L_State_Incorp_USC"=>"Norman", "beneficiary_name_first"=>"Nilay", "beneficiary_name_last"=>"Jayswal", 
-"position_job_title"=>"Junior Developer", "L_Int_Company"=>"Online Visas","L_Beneficiary's_Start_Date" => "May 15, 2017", "L_Beneficiary's_IC_Position"=>"Junior Developer",
-"L_Beneficiary's_work_venue_IC"=>"Norman, USA", "L_Beneficiary's_term_employment"=>"102 Weeks", "L_Beneficiary's_Salary"=>"2000 USD per month", "L_Date_Incorp_USC"=>"1993",
-"US_employment_letter_signator"=>"Ben Hunt","Title_US_employment_letter_signator"=>"CTO", "beneficiary_name_first"=>"Nilay", "beneficiary_name_last"=>"Jayswal",
-"L_Beneficiary's_US_Position" => "Junior Developer" );
 
 		echo '
 			<form action="USEmploymentAgmtProduce1101.php" method="post">
@@ -483,6 +478,18 @@ $getFieldLCarray = array ( "petitioner_company_name"=>"Online Visas", "L_State_I
 	function showDate() {
 		GLOBAL $section, $fontB, $fontR, $fontT, $paraL, $paraR, $dev_mode ;
 		$section->writeText(date('F d, Y'), $fontR, $paraL) ;
+	}
+	
+	function getFieldLC($linknode, $returnAll = False)
+	{
+		global $getFieldLCarray;
+
+$getFieldLCarray = array ( "petitioner_company_name"=>"Online Visas", "L_State_Incorp_USC"=>"Norman", "beneficiary_name_first"=>"Nilay", "beneficiary_name_last"=>"Jayswal", 
+"position_job_title"=>"Junior Developer", "L_Int_Company"=>"Online Visas","L_Beneficiary's_Start_Date" => "May 15, 2017", "L_Beneficiary's_IC_Position"=>"Junior Developer",
+"L_Beneficiary's_work_venue_IC"=>"Norman, USA", "L_Beneficiary's_term_employment"=>"102 Weeks", "L_Beneficiary's_Salary"=>"2000 USD per month", "L_Date_Incorp_USC"=>"1993",
+"US_employment_letter_signator"=>"Ben Hunt","Title_US_employment_letter_signator"=>"CTO", "beneficiary_name_first"=>"Nilay", "beneficiary_name_last"=>"Jayswal",
+"L_Beneficiary's_US_Position" => "Junior Developer" );
+		return $getFieldLCarray[$linknode];
 	}
 
 ?>

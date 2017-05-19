@@ -1,5 +1,5 @@
 <?php
-$section->writetext(' ', $fontR, $paraL) ;
+
 	// Leave space for company letterhead & address etc.
 	addNewLine(6) ;
 	
@@ -8,16 +8,16 @@ $section->writetext(' ', $fontR, $paraL) ;
 $section->writetext('EMPLOYMENT AGREEMENT', $fontB, $paraC) ;
 addNewLine(2);
 
-$section->writetext('THIS EMPLOYMENT AGREEMENT (" Agreement ") is made as of the '. $mydate['mday'] . ' day of ' . $mydate['month'] . ' ' . $mydate['year'] . ' between ' . $getFieldLCarray['petitioner_company_name'] . ', a  ' . $getFieldLCarray['L_State_Incorp_USC'] . ' enitity (" Company "), and ' . $getFieldLCarray['beneficiary_name_first'] . ' ' . $getFieldLCarray['beneficiary_name_last'] . ' (" Executive ").', $fontR, $paraL) ;
+$section->writetext('THIS EMPLOYMENT AGREEMENT (" Agreement ") is made as of the '. $mydate['mday'] . ' day of ' . $mydate['month'] . ' ' . $mydate['year'] . ' between ' . getFieldLC('petitioner_company_name') . ', a  ' . getFieldLC('L_State_Incorp_USC') . ' enitity (" Company "), and ' . getFieldLC('beneficiary_name_first') . ' ' . getFieldLC('beneficiary_name_last') . ' (" Executive ").', $fontR, $paraL) ;
 addNewLine(1);
 
 $section->writetext('WHEREAS, pursuant to determination of the Board of Directors of the Company, Company desires to confirm Executive’s position as ' . $getFieldLCarray['position_job_title'] . ' of Company.', $fontR, $paraL) ;
 addNewLine(1);
 
-$section->writetext('WHEREAS, Executive has been employed with ' . $getFieldLCarray['L_Int_Company'] . ' since ' . $getFieldLCarray["L_Beneficiary's_Start_Date"] . '.', $fontR, $paraL) ;
+$section->writetext('WHEREAS, Executive has been employed with ' . getFieldLC('L_Int_Company') . ' since ' . getFieldLC("L_Beneficiary's_Start_Date") . '.', $fontR, $paraL) ;
 addNewLine(1);
 
-$section->writetext('WHEREAS,IC held the position of ' . $getFieldLCarray["L_Beneficiary's_IC_Position"] . ' at the venue of ' . $getFieldLCarray["L_Beneficiary's_work_venue_IC"] . '.', $fontR, $paraL) ;
+$section->writetext('WHEREAS,IC held the position of ' . getFieldLC("L_Beneficiary's_IC_Position") . ' at the venue of ' . getFieldLC("L_Beneficiary's_work_venue_IC") . '.', $fontR, $paraL );
 addNewLine(1);
 
 $section->writetext('WHEREAS, Company desires to retain the benefit of the Executive’s skill, knowledge and experience in order to insure the continued successful operation of its business, and the Executive desires to render services to the Company;', $fontR, $paraL) ;
@@ -43,7 +43,7 @@ addNewLine(1);
 
 
 $section->writetext("1. Position and Duties :", $fontB, $paraL ); 
-$section->writetext("During the Term, the Executive shall serve as the President of the Company, and shall have such powers and duties as may from time to time be prescribed by the Board of Directors of the " . $getFieldLCarray['petitioner_company_name'] . ", provided that such duties are consistent with the Executive's position.", $fontR, $paraL) ;
+$section->writetext("During the Term, the Executive shall serve as the President of the Company, and shall have such powers and duties as may from time to time be prescribed by the Board of Directors of the " . getFieldLC('petitioner_company_name') . ", provided that such duties are consistent with the Executive's position.", $fontR, $paraL ) ;
 addNewLine(1);
 $section->writetext('Specific duties are as follows:', $fontR, $paraL) ;
 addNewLine(1);
@@ -58,14 +58,14 @@ $section->writetext("Meet with Company executives, managers, employees and franc
 addNewLine(2);
 
 
-$section->writetext("2. Term: " . $getFieldLCarray["L_Beneficiary's_term_employment"] . '.', $fontB, $paraL );
+$section->writetext("2. Term: " . getFieldLC("L_Beneficiary's_term_employment") . '.', $fontB, $paraL );
 addNewLine(2);
 
 
 $section->writetext("3. Compensation and Related Matters :", $fontB, $paraL );
 addNewLine(1);
 $section->writetext("(A) Base Salary:", $fontB, $paraL );
-$section->writetext('The Executive’s salary shall be ' . $getFieldLCarray["L_Beneficiary's_Salary"], $fontR, $paraL) ;
+$section->writetext('The Executive’s salary shall be ' . getFieldLC("L_Beneficiary's_Salary"), $fontR, $paraL) ;
 addNewLine(1);
 $section->writetext("(B) Bonuses:", $fontB, $paraL );
 $section->writetext('The Executive may from time to time be eligible to earn cash bonuses.', $fontR, $paraL) ;
@@ -109,12 +109,12 @@ addNewLine(2);
 
 
 $section->writetext("6. Settlement and Arbitration of Disputes:", $fontB, $paraL );
-$section->writetext('Any controversy or claim arising out of or relating to this Agreement or the breach thereof shall be settled exclusively by arbitration in accordance with the laws of the State of ' . $getFieldLCarray['L_Date_Incorp_USC'] . ' by three arbitrators, one of whom shall be appointed by the Company, one by the Executive and the third by the first two arbitrators. If the first two arbitrators cannot agree on the appointment of a third arbitrator, then the third arbitrator shall be appointed by the American Arbitration Association in Las Vegas, ' . $getFieldLCarray['L_Date_Incorp_USC'] . '. Such arbitration shall be conducted in Las Vegas, '. $getFieldLCarray['L_Date_Incorp_USC'] . ' in accordance with the Employment Dispute Resolutions Rules of the American Arbitration Association, except with respect to the selection of arbitrators which shall be as provided in this Section 9. Judgment upon the award rendered by the arbitrators may be entered in any court having jurisdiction thereof. This Section 9 shall be specifically enforceable. Notwithstanding the foregoing, this Section 9 shall not preclude either party from pursuing a court action for the sole purpose of obtaining a temporary restraining order or a preliminary injunction in circumstances in which such relief is appropriate; provided that any other relief shall be pursued through an arbitration proceeding pursuant to this Section 9.', $fontR, $paraL) ;
+$section->writetext('Any controversy or claim arising out of or relating to this Agreement or the breach thereof shall be settled exclusively by arbitration in accordance with the laws of the State of ' . getFieldLC('L_Date_Incorp_USC') . ' by three arbitrators, one of whom shall be appointed by the Company, one by the Executive and the third by the first two arbitrators. If the first two arbitrators cannot agree on the appointment of a third arbitrator, then the third arbitrator shall be appointed by the American Arbitration Association in Las Vegas, ' . getFieldLC('L_Date_Incorp_USC') . '. Such arbitration shall be conducted in Las Vegas, '. getFieldLC('L_Date_Incorp_USC') . ' in accordance with the Employment Dispute Resolutions Rules of the American Arbitration Association, except with respect to the selection of arbitrators which shall be as provided in this Section 9. Judgment upon the award rendered by the arbitrators may be entered in any court having jurisdiction thereof. This Section 9 shall be specifically enforceable. Notwithstanding the foregoing, this Section 9 shall not preclude either party from pursuing a court action for the sole purpose of obtaining a temporary restraining order or a preliminary injunction in circumstances in which such relief is appropriate; provided that any other relief shall be pursued through an arbitration proceeding pursuant to this Section 9.', $fontR, $paraL) ;
 addNewLine(2);
 
 
 $section->writetext("7. Consent to Jurisdiction:", $fontB, $paraL );
-$section->writetext('To the extent that any court action is permitted consistent with or to enforce the terms of Section 9 or any other provision of this Agreement, the parties hereby consent to and designate the jurisdiction and venue of Las Vegas, ' . $getFieldLCarray['L_Date_Incorp_USC']. ' as being proper and appropriate ("L_Date_Incorp_USC Courts").  Accordingly, with respect to any such court action, the Executive (a) submits to the personal jurisdiction of such courts; (b) consents to service of process; (c) waives, and agrees not to plead or to make, any claim that any such action or proceeding brought in L_Date_Incorp_USC Courts has been brought in an improper or inconvenient forum; and (d) waives any other requirement (whether imposed by statute, rule of court, or otherwise) with respect to personal jurisdiction or service of process.', $fontR, $paraL) ;
+$section->writetext('To the extent that any court action is permitted consistent with or to enforce the terms of Section 9 or any other provision of this Agreement, the parties hereby consent to and designate the jurisdiction and venue of Las Vegas, ' . getFieldLC('L_Date_Incorp_USC'). ' as being proper and appropriate ("' . getFieldLC('L_Date_Incorp_USC') . ' Courts".  Accordingly, with respect to any such court action, the Executive (a) submits to the personal jurisdiction of such courts; (b) consents to service of process; (c) waives, and agrees not to plead or to make, any claim that any such action or proceeding brought in ' . getFieldLC('L_Date_Incorp_USC') . ' Courts has been brought in an improper or inconvenient forum; and (d) waives any other requirement (whether imposed by statute, rule of court, or otherwise) with respect to personal jurisdiction or service of process.', $fontR, $paraL) ;
 addNewLine(2);
 
 
@@ -149,7 +149,7 @@ addNewLine(2);
 
 
 $section->writetext("14. Governing Law:", $fontB, $paraL );
-$section->writetext('This is a ' . $getFieldLCarray['L_Date_Incorp_USC']. ' contract and shall be construed under and be governed in all respects by the laws of the State of ' . $getFieldLCarray['L_Date_Incorp_USC']. ', without giving effect to the conflict of laws principles of such State. With respect to any disputes concerning federal law, such disputes shall be determined in accordance with the law as it would be interpreted and applied by the United States Court of Appeals for the appropriate Circuit.', $fontR, $paraL) ;
+$section->writetext('This is a ' . getFieldLC('L_Date_Incorp_USC'). ' contract and shall be construed under and be governed in all respects by the laws of the State of ' . getFieldLC('L_Date_Incorp_USC'). ', without giving effect to the conflict of laws principles of such State. With respect to any disputes concerning federal law, such disputes shall be determined in accordance with the law as it would be interpreted and applied by the United States Court of Appeals for the appropriate Circuit.', $fontR, $paraL) ;
 addNewLine(2);
 
 
@@ -177,12 +177,12 @@ $section->writetext('IN WITNESS WHEREOF, the parties have executed this Employme
 addNewLine(2);
 
 
-$section->writetext($getFieldLCarray['petitioner_company_name'], $fontB, $paraR );
+$section->writetext(getFieldLC('petitioner_company_name'), $fontB, $paraR );
 addNewLine(1);
 $section->writetext('By :', $fontR, $paraR);
 addNewLine(1);
-$section->writetext($getFieldLCarray['US_employment_letter_signator'], $fontR, $paraR);
-$section->writetext($getFieldLCarray['Title_US_employment_letter_signator'] . ', ' . $getFieldLCarray['petitioner_company_name'], $fontR, $paraR);
+$section->writetext(getFieldLC('US_employment_letter_signator'), $fontR, $paraR);
+$section->writetext(getFieldLC('Title_US_employment_letter_signator') . ', ' . getFieldLC('petitioner_company_name'), $fontR, $paraR);
 addNewLine(2);
 
 
@@ -190,8 +190,8 @@ $section->writetext('Executive', $fontR, $paraR);
 addNewLine(1);
 $section->writetext('By :', $fontR, $paraR);
 addNewLine(1);
-$section->writetext($getFieldLCarray['beneficiary_name_first'] . ' ' . $getFieldLCarray['beneficiary_name_last'], $fontR, $paraR);
-$section->writetext($getFieldLCarray["L_Beneficiary's_US_Position"], $fontR, $paraR);
+$section->writetext(getFieldLC('beneficiary_name_first') . ' ' . getFieldLC('beneficiary_name_last'), $fontR, $paraR);
+$section->writetext(getFieldLC("L_Beneficiary's_US_Position"), $fontR, $paraR);
 
 
 

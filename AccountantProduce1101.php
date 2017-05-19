@@ -5,10 +5,6 @@ function myDebug()
 	return false;
 }
 
-$getFieldLCarray = array ( "visa_type"=>"Business Visa", "beneficiary_name_first"=>"Ben", "beneficiary_name-last"=>"Hunt","petitioner_company_name"=>"Ben Hunt Limited", "L_Int_Company"=>"Online Visas", "Companies_Relationship"=>"Business Partners",
-"L_Describe_US_Company"=>"The 24/7 asynchronous Gateway platform to all the stakeholders who can view the status of their petition processes at any time of day or night, share information, complete tasks, and even make payments.",
-"L_State_Incorp_USC"=>"Norman", "L_Date_Incorp_USC"=>"1993", "L_USC_Ownership"=>"Velie Law Firm", "L_USC_Employees"=>"Some Employees", "L_USC_Revenue"=>"Some Revenue", 
-"L_USC_Assets" => "Some Assets", "US_accountant"=>"An US Accountant", "US_accountant_firm"=>"An US Firm");
 
 		echo '
 			<form action="AccountantProduce1101.php" method="post">
@@ -482,6 +478,17 @@ $getFieldLCarray = array ( "visa_type"=>"Business Visa", "beneficiary_name_first
 	function showDate() {
 		GLOBAL $section, $fontB, $fontR, $fontT, $paraL, $paraR, $dev_mode ;
 		$section->writeText(date('F d, Y'), $fontR, $paraL) ;
+	}
+	
+	function getFieldLC($linknode, $returnAll = False)
+	{
+		global $getFieldLCarray;
+$getFieldLCarray = array ( "visa_type"=>"Business Visa", "beneficiary_name_first"=>"Ben", "beneficiary_name_last"=>"Hunt","petitioner_company_name"=>"Ben Hunt Limited", "L_Int_Company"=>"Online Visas", "Companies_Relationship"=>"Business Partners",
+"L_Describe_US_Company"=>"The 24/7 asynchronous Gateway platform to all the stakeholders who can view the status of their petition processes at any time of day or night, share information, complete tasks, and even make payments.",
+"L_State_Incorp_USC"=>"Norman", "L_Date_Incorp_USC"=>"1993", "L_USC_Ownership"=>"Velie Law Firm", "L_USC_Employees"=>"Some Employees", "L_USC_Revenue"=>"Some Revenue", 
+"L_USC_Assets" => "Some Assets", "US_accountant"=>"An US Accountant", "US_accountant_firm"=>"An US Firm");
+		
+		return $getFieldLCarray[$linknode];
 	}
 
 ?>
