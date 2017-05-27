@@ -7,7 +7,7 @@ function myDebug()
 
 		echo '
 			<form action="ExpertLetterProduce.php" method="post">
-				Doc name: <input type="text" name="doc_name" value="P1-expert-letter-2"><br>
+				Doc name: <input type="text" name="doc_name" value="P1-expert-letter-4"><br>
 				Case ID: <input type="text" name="case_id" value="1101"><br>
 				Firm ID: <input type="text" name="firm_id" value="13"><br>
 				File type: <input type="text" name="file_type" value="rtf"><br>
@@ -486,7 +486,11 @@ function myDebug()
 $getFieldLCarray = array ( "P_1_expert_1"=>"Jim Carry", "P_1_sport"=>"Basketball", "P_1_expert_1_bio"=>"Bio of Expert 1", "P_1_prior_season"=>"NBA Season",
 "P_1_national_team"=>"Cavaliers", "P_1_ranking"=>"6", "P_1_honors"=>"Rookie of the Year", "Beneficiary_Name"=>"Peter Dinklage", "Visa_Type"=>"L1 A",
 
-"P_1_expert_2"=>"Cim Larry", "P_1_expert_2_bio"=>"Bio of Expert 2", "P_1_us_college_team"=>"The WoodBarks", "P_1_gov_body_official"=>"IBCI", "P_1_peer"=>"Lath Crisman"   );
+"P_1_expert_2"=>"Cim Larry", "P_1_expert_2_bio"=>"Bio of Expert 2", "P_1_us_college_team"=>"The WoodBarks", "P_1_gov_body_official"=>"IBCI", "P_1_peer"=>"Lath Crisman",
+
+"P_1_expert_3"=>"Lim Jon", "P_1_expert_3_bio"=>"Bio of Expert 3",
+
+"P_1_expert_4"=>"Cash Hu Ming", "P_1_expert_4_bio"=>"Bio of Expert 4", "beneficiary_citizenship_country"=>"England"   );
 
 		
 		return $getFieldLCarray[$linknode];
