@@ -7,7 +7,7 @@ function myDebug()
 
 		echo '
 			<form action="ExpertLetterProduce.php" method="post">
-				Doc name: <input type="text" name="doc_name" value="P1-expert-letter-4"><br>
+				Doc name: <input type="text" name="doc_name" value="P1-expert-letter-5"><br>
 				Case ID: <input type="text" name="case_id" value="1101"><br>
 				Firm ID: <input type="text" name="firm_id" value="13"><br>
 				File type: <input type="text" name="file_type" value="rtf"><br>
@@ -490,7 +490,9 @@ $getFieldLCarray = array ( "P_1_expert_1"=>"Jim Carry", "P_1_sport"=>"Basketball
 
 "P_1_expert_3"=>"Lim Jon", "P_1_expert_3_bio"=>"Bio of Expert 3",
 
-"P_1_expert_4"=>"Cash Hu Ming", "P_1_expert_4_bio"=>"Bio of Expert 4", "beneficiary_citizenship_country"=>"England"   );
+"P_1_expert_4"=>"Cash Hu Ming", "P_1_expert_4_bio"=>"Bio of Expert 4", "beneficiary_citizenship_country"=>"England",
+
+"P_1_expert_5"=>"Maya Kevinson", "P_1_expert_5_bio"=>"Bio of Expert 5", "Beneficiary_Title"=>"Mr."   );
 
 		
 		return $getFieldLCarray[$linknode];
