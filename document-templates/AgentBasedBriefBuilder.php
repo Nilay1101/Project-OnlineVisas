@@ -137,7 +137,80 @@
 	
 	$section->writetext('LEGAL DISCUSSION AND RECITATION OF AUTHORITIES', $fontT, $paraL) ;
 	addNewLine(1) ;
+	$fontBl = new PHPRtfLite_Font(12, 'Serif', '#0000ff') ;
 	
+	$section->writetext('8 CFR § 214.2 (p)(2) – A P-1 petition for an athlete or entertainment group shall be filed by a United States employer, a United States sponsoring organization, a United States agent, or a foreign employer through a United States agent', $fontBl, $paraL) ;
+	
+	$section->writetext('The Beneficiary, ' . getFieldLC('beneficiary_title') . ' ' . getFieldLC('beneficiary_name_last') . ' , is internationally recognized in sport and seeks to enter into employment in the United States to compete as a ' . getFieldLC('position_job_title') . ' . ' . getFieldLC('beneficiary_title') . ' ' . getFieldLC('beneficiary_name_last') . ' is qualified to do so pursuant to <em><strong>Section 101 (a) (15) (P)</strong> of the Immigration and Nationality Act, as amended and <strong>8 CFR 214.2 (p)</strong></em>.', $fontR, $paraL) ;
+	
+	$section->writetext(getFieldLC('beneficiary_title') . ' ' . getFieldLC('beneficiary_name_last') . ' meets the requirements to be defined as "internationally recognized as exceptional in the sport of ' . getFieldLC('position_job_title') . ' " under <em><strong>8 CFR 214.2 (p) (4) (i) (A)</em></strong>.', $fontR, $paraL) ;
+	
+	$section->writetext('This petition will establish that ' . getFieldLC('beneficiary_title') . ' ' . getFieldLC('beneficiary_name_last') . ' meets the above stated definition with the submission of evidence that he has met this status and intends to work in the United States in the area of ' . getFieldLC('position_job_title') . ' .', $fontR, $paraL) ;
+	
+	$section->writetext('<strong>Exhibit 1</strong> is an Agent Letter from ' . getFieldLC('petitioner_company_name') . ', describing the terms of ' . getFieldLC('beneficiary_title') . ' ' . getFieldLC('beneficiary_name_last') . '’s employment with ' . getFieldLC('Direct_employer_names') . ' .  The letter describes the terms and conditions of employment for the next five years.  Exhibit 1 meets the criteria to the right as it is an explanation of the nature of events or activities and the beginning and ending dates for the events or activities.', $fontR, $paraL) ;
+	
+	$section->writetext('<strong>Exhibit 2</strong> is a contract between ' . getFieldLC('beneficiary_title') . ' ' . getFieldLC('beneficiary_name_last') . ' and ' . getFieldLC('petitioner_company_name') . ' as Agent.  This contract confirms ' . getFieldLC('beneficiary_title') . ' ' . getFieldLC('beneficiary_name_last') . '’s retention with ' . getFieldLC('petitioner_company_name') . ' for sports representation in the area of professional ' . getFieldLC('p_1_sport') . ' for a period of five years,.  This includes serving as ' . getFieldLC('beneficiary_title') . ' ' . getFieldLC('beneficiary_name_last') . '’s agent in petitioning for his immigration case and serving as a link to his direct employer. <strong>Exhibit 2</strong> meets the criteria to the right as it is a copy of a written contract between the petitioner and alien beneficiary.', $fontR, $paraL) ;
+	
+	$section->writetext('8 CFR § 214.2 (p)(2)(ii) – Petitions for P nonimmigrant aliens shall be accompanied by the following:
+(B) Copies of any written contracts between the petitioner and the alien beneficiary or, if there is no written contract, a summary of the terms of the oral agreement under which the alien(s) will be employed.
+(C) An explanation of the nature of the events or activities, the beginning and ending dates for the events or activities, and a copy of any itinerary for the events or activities', $fontBl, $paraL) ;
+
+	$section->writetext('<strong>Exhibit 3</strong> is the November 20, 2009 Memorandum with the subject line "Requirements for Agents and Sponsors Filing as Petitioners for the O and P Visa Classifications." This memorandum states the regulations and requirements for filing a petition as a United States Agent. Exhibit 3 is included as supporting documentation along with the Athlete Agent Certificate of Registration of ' . getFieldLC('petitioner_company_name') . '’s representation as agent for this petition.', $fontR, $paraL) ;
+	
+	$section->writetext('<strong>Exhibit 4</strong> is a Contract between ' . getFieldLC('beneficiary_title') . ' ' . getFieldLC('beneficiary_name_last') . ' and ' . getFieldLC('Direct_employer_names') . ' explaining their terms of agreement as a direct employer for a term of ' . getFieldLC('position_duration_years') . ' between ' . getFieldLC('position_start_date') . ' and ' . getFieldLC('position_end_date') . ' . The ' . getFieldLC('Direct_employer_names') . ' will sponsor ' . getFieldLC('beneficiary_title') . ' ' . getFieldLC('beneficiary_name_last') . ' at a rate of ' . getFieldLC('position_wages_dollar_rate') . ' per ' . getFieldLC('position_wages_per_unit_time') . '. ', $fontR, $paraL) ;
+	
+	$section->writetext('<strong>Exhibit 5</strong> is a copy of ' . getFieldLC('beneficiary_title') . ' ' . getFieldLC('beneficiary_name_last') . '’s daily/weekly schedule of activities for training and instructing. <strong>Exhibit 5</strong> meets the criteria to the right as an explanation of the nature of the events or activities, the beginning and ending dates for the events or activities and a copy of the itinerary for the events or activities.', $fontR, $paraL) ;
+	
+	$section->writetext('<strong>Exhibit 6</strong> is a copy of ' . getFieldLC('beneficiary_title') . ' ' . getFieldLC('beneficiary_name_last') . '’s annual schedules detailing his competition and other duties for the requested term of the visas. <strong>Exhibit 6</strong> meets the criteria to the right as an explanation of the nature of the events or activities, the beginning and ending dates for the events or activities and a copy of the itinerary for the events or activities', $fontR, $paraL) ;
+	
+	$section->writetext('8 CFR § 214.2 (p)(2)(ii) - Petitions for P nonimmigrant aliens shall be accompanied by the following: 
+A written consultation from a labor organization.', $fontBl, $paraL) ;
+
+	$section->writetext('Sec. 214.2(p)(5)(F)- In those cases where it is established by the petitioner that an appropriate labor organization does not exist, the Service shall render a decision on the evidence of record. ', $fontBl, $paraL) ;
+	
+	$section->writetext('<strong>Exhibit 7 </strong>', $fontR, $paraL) ;
+	
+	$section->writetext('<strong>(1) Evidence of having participated to a significant extent in a prior season with a major United States sports league;</strong>', $fontR, $paraL) ;
+	$section->writetext('<strong>(2) Evidence of having participated in international competition with a national team;</strong>', $fontR, $paraL) ;
+	$section->writetext('<strong>(3) Evidence of having participated to a significant extent in a prior season for a U.S. college or university in intercollegiate competition;</strong>', $fontR, $paraL );
+	$section->writetext('<strong>(4) A written statement from an official of a major U.S. sports league or an official of the governing body of the sport which details how the alien or team is internationally recognized;</strong>', $fontR, $paraL) ;
+	$section->writetext('<strong>(5) A written statement from a member of the sports media or a recognized expert in the sport which details how the alien or team is internationally recognized;</strong>', $fontR, $paraL) ;
+	$section->writetext('<strong>(6) Evidence that the individual or team is ranked if the sport has international rankings;</strong>', $fontR, $paraL) ;
+	$section->writetext('<strong>(7) Evidence that the alien or team has received a significant honor or award in the sport. </strong>', $fontR, $paraL) ;
+	
+	$section->writetext('<strong><u>8 CFR § 214.2 (p)(4)(ii)(B)(2)(1)(4)(2)</u> - Evidence of having participated to a significant extent in international competition with a national team</strong>', $fontBl, $paraL) ;
+	addNewLine(1);
+	$section->writetext(getFieldLC('P_1_national_team'), $fontR, $paraL) ;
+	$section->writetext('The following evidence supports the statement above.', $fontR, $paraL) ;
+	addNewLine(1);
+	$section->writetext('<strong>Exhibit</strong>', $fontR, $paraL) ;
+	$section->writetext('<strong>Exhibit</strong>', $fontR, $paraL) ;
+	addNewLine(1);
+	
+	$section->writetext('<strong><u>8 CFR § 214.2 (p)(4)(ii)(B)(2)(1)(4)(3)</u> - Evidence of having participated to a significant extent in a prior season for a U.S. college or university in intercollegiate competition. </strong>', $fontBl, $paraL) ;
+	addNewLine(1);
+	$section->writetext(getFieldLC('P_1_us_college_team'), $fontR, $paraL) ;
+	$section->writetext('The following evidence supports the statement above.', $fontR, $paraL) ;
+	addNewLine(1);
+	$section->writetext('<strong>Exhibit</strong>', $fontR, $paraL) ;
+	$section->writetext('<strong>Exhibit</strong>', $fontR, $paraL) ;
+	addNewLine(1);
+	
+	$section->writetext('<strong><u>8 CFR § 214.2 (p)(4)(ii)(B)(2)(1)(4)(5)</u> - A written statements from a member of the sports media or a recognized expert in the sport which details how you or your team is internationally recognized. </strong>', $fontBl, $paraL) ;
+	addNewLine(1);
+	$section->writetext(getFieldLC('P_1_peer'), $fontR, $paraL) ;
+	$section->writetext('The following evidence supports the statement above.', $fontR, $paraL) ;
+	addNewLine(1);
+	$section->writetext('<strong>Exhibit</strong>', $fontR, $paraL) ;
+	$section->writetext('<strong>Exhibit</strong>', $fontR, $paraL) ;
+	addNewLine(1);
+	
+	$section->writetext('<strong><u>8 CFR § 214.2 (p)(4)(ii)(B)(2)(1)(4)(7)</u> - Evidence that you or your team has received a significant honor or award in the sport. </strong>', $fontBl, $paraL) ;
+	addNewLine(1);
+	$section->writetext('The following evidence supports the statement above.', $fontR, $paraL) ;
+	addNewLine(1);
+	$section->writetext('<strong>Exhibit</strong>', $fontR, $paraL) ;
+	$section->writetext('<strong>Exhibit</strong>', $fontR, $paraL) ;
 	
 	$section->insertPageBreak() ;
 	
