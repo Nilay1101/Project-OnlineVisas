@@ -41,9 +41,9 @@
 	
 	checkBox('part1_address_o',
 		array(
-			'Apt' => 'form1[0].#subform[0].Line2c_Unit[0]' ,
-			'Ste' => 'form1[0].#subform[0].Line2c_Unit[1]' ,
-			'Flr' => 'form1[0].#subform[0].Line2c_Unit[2]' 
+			'Apt' => 'form1[0].#subform[0].Line2c_Unit[2]' ,
+			'Ste' => 'form1[0].#subform[0].Line2c_Unit[0]' ,
+			'Flr' => 'form1[0].#subform[0].Line2c_Unit[1]' 
 		)
 	) ;
 	
@@ -73,20 +73,45 @@
 	
 	//PART 2
 	
-	checkBox('part2_application_type',
+	checkBox('part2_application_type1',
 		array(
-			'I am a permanent resident or conditional resident of the United States, and I am applying for a reentry permit.' => 'form1[0].#subform[1].Line1a_checkbox[0]' ,
-			'I now hold U.S. refugee or asylee status, and I am applying for a Refugee Travel Document.' => 'form1[0].#subform[1].Line1b_checkbox[0]' ,
-			'I am a permanent resident as a direct result of refugee or asylee status, and I am applying for a Refugee Travel Document.' => 'form1[0].#subform[1].Line1c_checkbox[0]' ,
-			'I am applying for an Advance Parole Document to allow me to return to the United States after temporary foreign travel.' => 'form1[0].#subform[1].Line1d_checkbox[0]' ,
-			'I am applying for an Advance Parole Document to allow me to return to the United States after temporary foreign travel.' => 'form1[0].#subform[1].Line1e_checkbox[0]' ,
-			'I am applying for an Advance Parole Document for a person who is outside the United States.' => 'form1[0].#subform[1].Line1f_checkbox[0]'
+			'Yes' => 'form1[0].#subform[1].Line1a_checkbox[0]'
 		)
 	) ;
 	
-	switch (getFieldLC('part2_application_type'))
+	checkBox('part2_application_type2',
+		array(
+			'Yes' => 'form1[0].#subform[1].Line1b_checkbox[0]'
+		)
+	) ;
+	
+	checkBox('part2_application_type3',
+		array(
+			'Yes' => 'form1[0].#subform[1].Line1c_checkbox[0]'
+		)
+	) ;
+	
+	checkBox('part2_application_type4',
+		array(
+			'Yes' => 'form1[0].#subform[1].Line1d_checkbox[0]'
+		)
+	) ;
+	
+	checkBox('part2_application_type5',
+		array(
+			'Yes' => 'form1[0].#subform[1].Line1e_checkbox[0]'
+		)
+	) ;
+	
+	checkBox('part2_application_type6',
+		array(
+			'Yes' => 'form1[0].#subform[1].Line1f_checkbox[0]'
+		)
+	) ;
+	
+	switch (getFieldLC('part2_application_type6'))
 	{
-		case 'I am applying for an Advance Parole Document for a person who is outside the United States.' :
+		case 'Yes' :
 			writeText('part2_name_last',  'form1[0].#subform[1].Line2a_FamilyName[0]') ;
 			writeText('part2_name_first',  'form1[0].#subform[1].Line2b_GivenName[0]') ;
 			writeText('part2_name_middle',  'form1[0].#subform[1].Line2c_MiddleName[0]') ;
@@ -101,9 +126,9 @@
 	
 			checkBox('part2_address_o',
 		array(
-			'Apt' => 'form1[0].#subform[1].Line2j_Unit[0]' ,
-			'Ste' => 'form1[0].#subform[1].Line2j_Unit[1]' ,
-			'Flr' => 'form1[0].#subform[1].Line2j_Unit[2]' 
+			'Apt' => 'form1[0].#subform[1].Line2j_Unit[2]' ,
+			'Ste' => 'form1[0].#subform[1].Line2j_Unit[0]' ,
+			'Flr' => 'form1[0].#subform[1].Line2j_Unit[1]' 
 		)
 	) ;
 	
@@ -155,88 +180,65 @@
 		
 	}
 	
-	checkBox('part3_document_sent',
+	checkBox('part3_document_sent1',
 		array(
-			'To the U.S. address shown in Part 1.' => 'form1[0].#subform[2].Line5_USAddress[0]' ,
-			'To a U.S. Embassy or consulate.' => 'form1[0].#subform[2].Line6_USEmbassy[0]' ,
-			'To a DHS office overseas.' => 'form1[0].#subform[2].Line7_DHSOffice[0]'
+			'Yes' => 'form1[0].#subform[2].Line5_USAddress[0]'
 		)
 	) ;
 	
-	switch (getFieldLC('part3_document_sent'))
+	checkBox('part3_document_sent2',
+		array(
+			'Yes' => 'form1[0].#subform[2].Line6_USEmbassy[0]'
+		)
+	) ;
+	
+	checkBox('part3_document_sent3',
+		array(
+			'Yes' => 'form1[0].#subform[2].Line7_DHSOffice[0]'
+		)
+	) ;
+	
+	switch (getFieldLC('part3_document_sent2'))
 	{
-		case 'To a U.S. Embassy or consulate.' :
+		case 'Yes' :
 			writeText('part3_document_sent_embassy_city',  'form1[0].#subform[2].Line6a_CityOrTown[0]') ;
 			writeText('part3_document_sent_embassy_country',  'form1[0].#subform[2].Line6b_Country[0]') ;
-			//NESTED
-			checkBox('part3_document_sent_embassy_dhs_pickup',
-		array(
-			'To the address shown in Part 2' => 'form1[0].#subform[2].Line8_AddressPart2[0]' ,
-			'To the address shown in Part 3' => 'form1[0].#subform[2].Line9_AddressBelow[0]' 
-		)
-	) ;
-	//NESTED : END
-	
-			//NESTED
-			switch (getFieldLC('part3_document_sent_embassy_dhs_pickup'))
-	{
-		case 'To the address shown in Part 3' :
-			writeText('part3_pickup_address_care_name',  'form1[0].#subform[2].Line10a_InCareofName[0]') ;
-			writeText('part3_pickup_address_street_number_name',  'form1[0].#subform[2].Line10b_StreetNumberName[0]') ;
-	
-			checkBox('part3_pickup_address_o',
-		array(
-			'Apt' => 'form1[0].#subform[2].Line10c_Unit[0]' ,
-			'Ste' => 'form1[0].#subform[2].Line10c_Unit[1]' ,
-			'Flr' => 'form1[0].#subform[2].Line10c_Unit[2]' 
-		)
-	) ;
-	
-			writeText('part3_pickup_address_apt_ste_flr_number',  'form1[0].#subform[2].Line10c_AptSteFlrNumber[0]') ;
-			writeText('part3_pickup_address_city',  'form1[0].#subform[2].Line10d_CityOrTown[0]') ;
-	
-			writeText('part3_pickup_address_state',  'form1[0].#subform[2].Line10e_State[0]') ;
-	
-			writeText('part3_pickup_address_zip_code',  'form1[0].#subform[2].Line10f_ZipCode[0]') ;
-			writeText('part3_pickup_address_postal_code',  'form1[0].#subform[2].Line10g_PostalCode[0]') ;
-			writeText('part3_pickup_address_province',  'form1[0].#subform[2].Line10h_Province[0]') ;
-			writeText('part3_pickup_address_country',  'form1[0].#subform[2].Line10i_Country[0]') ;
-			writeText('part3_pickup_address_daytime_pn_1',  'form1[0].#subform[2].#area[5].Line10j_DaytimePhoneNumber1[0]') ;
-			writeText('part3_pickup_address_daytime_pn_2',  'form1[0].#subform[2].#area[5].Line10j_DaytimePhoneNumber2[0]') ;
-			writeText('part3_pickup_address_daytime_pn_3',  'form1[0].#subform[2].#area[5].Line10j_DaytimePhoneNumber3[0]') ;
-			
 			break ;
-		
 	}
-	// NESTED : END
 	
-			break ;
+	switch (getFieldLC('part3_document_sent3'))
+	{
 			
 		case 'To a DHS office overseas.' :
 			writeText('part3_document_sent_dhs_city',  'form1[0].#subform[2].Line7a_CityOrTown[0]') ;
 			writeText('part3_document_sent_dhs_country',  'form1[0].#subform[2].Line7b_Country[0]') ;
-			//NESTED
-			checkBox('part3_document_sent_embassy_dhs_pickup',
+			break ;
+		
+	}
+	
+	checkBox('part3_document_sent_embassy_dhs_pickup1',
 		array(
-			'To the address shown in Part 2' => 'form1[0].#subform[2].Line8_AddressPart2[0]' ,
-			'To the address shown in Part 3' => 'form1[0].#subform[2].Line9_AddressBelow[0]' 
+			'Yes' => 'form1[0].#subform[2].Line8_AddressPart2[0]'
 		)
 	) ;
-	//NESTED : END
 	
+	checkBox('part3_document_sent_embassy_dhs_pickup2',
+		array(
+			'Yes' => 'form1[0].#subform[2].Line9_AddressBelow[0]' 
+		)
+	) ;
 	
-			//NESTED
-			switch (getFieldLC('part3_document_sent_embassy_dhs_pickup'))
+			switch (getFieldLC('part3_document_sent_embassy_dhs_pickup2'))
 	{
-		case 'To the address shown in Part 3' :
+		case 'Yes' :
 			writeText('part3_pickup_address_care_name',  'form1[0].#subform[2].Line10a_InCareofName[0]') ;
 			writeText('part3_pickup_address_street_number_name',  'form1[0].#subform[2].Line10b_StreetNumberName[0]') ;
 	
 			checkBox('part3_pickup_address_o',
 		array(
-			'Apt' => 'form1[0].#subform[2].Line10c_Unit[0]' ,
-			'Ste' => 'form1[0].#subform[2].Line10c_Unit[1]' ,
-			'Flr' => 'form1[0].#subform[2].Line10c_Unit[2]' 
+			'Apt' => 'form1[0].#subform[2].Line10c_Unit[2]' ,
+			'Ste' => 'form1[0].#subform[2].Line10c_Unit[0]' ,
+			'Flr' => 'form1[0].#subform[2].Line10c_Unit[1]' 
 		)
 	) ;
 	
@@ -253,11 +255,6 @@
 			writeText('part3_pickup_address_daytime_pn_2',  'form1[0].#subform[2].#area[5].Line10j_DaytimePhoneNumber2[0]') ;
 			writeText('part3_pickup_address_daytime_pn_3',  'form1[0].#subform[2].#area[5].Line10j_DaytimePhoneNumber3[0]') ;
 			
-			break ;
-		
-	}
-	// NESTED : END
-	
 			break ;
 		
 	}
@@ -269,14 +266,40 @@
 	
 	//PART 5
 	
-	checkBox('part5_time_outside_us', 
+	checkBox('part5_time_outside_us1', 
 		array(
-			'less than 6 months' => 'form1[0].#subform[2].Line1a_Lessthan6[0]' ,
-			'6 months to 1 year' => 'form1[0].#subform[2].Line1b_6months[0]' ,
-			'1 to 2 years' => 'form1[0].#subform[2].Line1c_1to2[0]' ,
-			'2 to 3 years' => 'form1[0].#subform[2].Line1d_2to3[0]' ,
-			'3 to 4 years' => 'form1[0].#subform[2].Line1e_3to4[0]' ,
-			'more than 4 ' => 'form1[0].#subform[2].Line1f_morethan[0]' 
+			'Yes' => 'form1[0].#subform[2].Line1a_Lessthan6[0]'
+		)
+	) ;
+	
+	checkBox('part5_time_outside_us2', 
+		array(
+			'Yes' => 'form1[0].#subform[2].Line1b_6months[0]'
+		)
+	) ;
+	
+	checkBox('part5_time_outside_us3', 
+		array(
+			'Yes' => 'form1[0].#subform[2].Line1c_1to2[0]' 
+		)
+	) ;
+	
+	checkBox('part5_time_outside_us4', 
+		array(
+			'Yes' => 'form1[0].#subform[2].Line1d_2to3[0]' 
+			
+		)
+	) ;
+	
+	checkBox('part5_time_outside_us5', 
+		array(
+			'Yes' => 'form1[0].#subform[2].Line1e_3to4[0]'
+		)
+	) ;
+	
+	checkBox('part5_time_outside_us6', 
+		array(
+			'Yes' => 'form1[0].#subform[2].Line1f_morethan[0]' 
 		)
 	) ;
 	
@@ -353,24 +376,29 @@
 	writeText('part7_parole_embassy_us_city',  'form1[0].#subform[3].Line2a_CityOrTown[0]') ;
 	writeText('part7_parole_embassy_us_country',  'form1[0].#subform[3].Line2b_Country[0]') ;
 	
-	checkBox('part7_pickup_address', 
+	checkBox('part7_pickup_address1', 
 		array(
-			'To the address shown in Part 2' => 'form1[0].#subform[3].Line3_AddressPart2[0]' ,
-			'To the address shown in Part 7' => 'form1[0].#subform[3].Line4_AddressBelow[0]'
+			'Yes' => 'form1[0].#subform[3].Line3_AddressPart2[0]'
 		)
 	) ;
 	
-	switch (getFieldLC('part7_pickup_address'))
+	checkBox('part7_pickup_address2', 
+		array(
+			'Yes' => 'form1[0].#subform[3].Line4_AddressBelow[0]'
+		)
+	) ;
+	
+	switch (getFieldLC('part7_pickup_address1'))
 	{
-		case 'To the address shown in Part 7' :
+		case 'Yes' :
 			writeText('part7_pickup_address_care_name',  'form1[0].#subform[3].Line4a_InCareofName[0]') ;
 			writeText('part7_pickup_address_street_number_name',  'form1[0].#subform[3].Line4b_StreetNumberName[0]') ;
 	
 			checkBox('part7_pickup_address_o',
 		array(
-			'Apt' => 'form1[0].#subform[3].Line4c_Unit[0]' ,
-			'Ste' => 'form1[0].#subform[3].Line4c_Unit[1]' ,
-			'Flr' => 'form1[0].#subform[3].Line4c_Unit[2]' 
+			'Apt' => 'form1[0].#subform[3].Line4c_Unit[2]' ,
+			'Ste' => 'form1[0].#subform[3].Line4c_Unit[0]' ,
+			'Flr' => 'form1[0].#subform[3].Line4c_Unit[1]' 
 		)
 	) ;
 	
@@ -405,9 +433,9 @@
 	
 	checkBox('part9_paddress_o',
 		array(
-			'Apt' => 'form1[0].#subform[4].Line3b_Unit[0]' ,
-			'Ste' => 'form1[0].#subform[4].Line3b_Unit[1]' ,
-			'Flr' => 'form1[0].#subform[4].Line3b_Unit[2]' 
+			'Apt' => 'form1[0].#subform[4].Line3b_Unit[2]' ,
+			'Ste' => 'form1[0].#subform[4].Line3b_Unit[0]' ,
+			'Flr' => 'form1[0].#subform[4].Line3b_Unit[1]' 
 		)
 	) ;
 	
