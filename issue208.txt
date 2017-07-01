@@ -1,0 +1,18 @@
+ISSUE #208 : 
+
+Details:
+
+    1. When a stakeholder is added to a case (petition or lead), and they are not already a user, they will have a "stub" user account created.
+    2. That partial account has their name/email, but no password hash. Instead, there's a long random number (tUsers > activation_code).
+    3. They'll also get a link for their first login. This gives us the opportunity to give first-time visitors a simpler experience.
+    4. The login link is displayed on their Stakeholder panel under the case, Stakeholders tab.
+    5. Please try out the process for yourself. Add a stakeholder (random email is fine), and copy the link, paste into a new browser (or incognito window).
+    6. New stakeholders will also get a short welcome email (functions.php > stakeholderAdd() function). That email contains their one-time login link.
+    7. After they use the login link and set their password, the login code is removed from the database and they'll have to use regular login instead.
+    8. This helps us maintain security by letting all users set their own passwords.
+
+Your task:
+
+    1. If you click on a user at various points in the system, it will bring up their user details page.
+    2. For part-registered stakeholders, I want the login link to be displayed on their user details page, not only on the stakeholder panel.
+    3. Let's say that it can always be displayed to all users, i.e. whoever has privileges to see the page will be able to see the link.
