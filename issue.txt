@@ -1,0 +1,15 @@
+First, look at fields in cases. I recently added some customisation to enable users to set max length on text fields.
+
+You'll see that, if you add a string like [L1234] into the Notes/Content/Description of a step, and that step is type "text", then that step will have a fixed maximum length.
+
+So if you use e.g. "Enter full US area code [L6]" as the Notes, the note will be shown, " [L6]" will be stripped out, but the field will have a max length of 6 characters, shown in a note and also enforced in HTML.
+
+See case-show-steps-contents.php and case-show-steps.php and figure out how this works. (You'll need to edit the same files.)
+
+What I would like you to do is to extend this functionality for customising the format of text fields. We'll only deal with regular text field steps for now.
+
+Let's start with something simple, like requiring a field to contain only numbers.
+
+So you should be able to add "[NUM]" to the step's Notes, and that will force the field to be numeric when the step is used in a case. That could be validated with JavaScript perhaps, by adding a class ="validate-number" that gets a check to run when the field is edited.
+
+Another option is to add "[EMAIL]" to a field, which will change the input type from <input type="text"> to <input type="email"> which means we'll use modern browsers' in-built HTML5 validation.
