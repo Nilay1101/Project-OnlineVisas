@@ -1,0 +1,51 @@
+<-----Overview----->
+
+After an attorney has completed a strategy session on a case (lead or petition), we need to give them a way to notify everyone involved with a "Ready to send contract" message.
+
+Brief
+
+    1. We want a button on the "Contract" tab, before any steps.
+    2. "Ready for Contract" button is only visible to firm reps (i.e. $_SESSION['user_type'] == 'firm').
+    3. Button is only visible if status is one of the following six status codes: Lead, Case, Adopted, New, Strategy, In Progress.
+    4. Upon clicking the button, call an AJAX function (ovg-js.js > step-actions.php) that:
+        1. Sets the status of the case to "Contract" (new status, please add to both $lead_status_codes and $case_status_codes in functions.php.
+        2. Sends an email to every stakeholder on the case who has recieve_updates set to true with the content below.
+
+
+<-----Email----->
+
+Subject: Your OnlineVisas case is ready for contract
+
+Body:
+You are a stakeholder on the OnlineVisas case {case description}. This is a notification that your attorney {first_name last_name} has completed the immigration strategy work and the case is now ready to go to contract.
+
+Best regards,
+OnlineVisas team
+
+-- end --
+
+<-----Notes----->
+
+    You can get the case description from the function buildCaseTitle(petition_id).
+    For the attorney's name, use $_SESSION['first_name'] and $_SESSION['last_name']
+
+Time
+I estimated four hours for me to do this work. If you can do it in two days, that will be a good result.
+
+I am available for any questions at all. Please ask if anything is unclear.
+
+(If you have time, there is another additional task that follows on from this, which is to add a visual alert on Gateway to highlight these leads/cases.)
+
+
+<-----Additional----->
+
+If the case is a LEAD, then use buildLeadDescription(), not buildCaseTitle().. which will only work for petitions.
+
+Background:
+
+A case may be a lead or a petition.
+A case may start as a lead, and then be promoted to a petition.
+Or firm reps may simply go ahead and start a new petition, if they know exactly what the visa type will be.
+Leads can be offered to other firms via the "marketplace" (I have a flow chart for this), so may be offered to other firms, accepted, rejected etc.
+
+Note: the best way to know if a case is a lead or petition is to see if the visa_type is set.
