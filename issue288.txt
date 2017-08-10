@@ -1,0 +1,20 @@
+Currently, when you upload a file, you have the option to make it private or not private.
+
+Private means it can be accessed only by the person who uploaded it and anyone at the law firm that the case belongs to. Not private means that all stakeholders on the case can view it.
+
+There are tests in the code (case-show-steps.php, I think) that checks whether the current user can access the file or not.
+
+We want to change this functionality, as it isn't detailed enough.
+
+Now, we want to change this:
+1. Change "Private?" to "Access" and show a list of ALL current stakeholders on the case, with a checkbox to give that individual access.
+
+2. If a stakeholder is an attorney on the case, they MUST have permission, so show a checked disabled checkbox, and that can't be unchecked.
+
+3. Add a new field to the tPetitionStepComments table, "permissions" which will contain a comma-separated list of user ids who have permission to view the file.
+
+4. Change the code that checks for permission to see if the permissions field list contains the current user's ID.
+
+5. Finally, if the current user is the person who uploaded the file or the attorney on the case, add next to the link to the file a link or button "Access (n)" where n is the number of  people who have access. When that link is clicked, show a popup that allows them to edit the access list and re-save.
+
+Time: 2-3 days.
