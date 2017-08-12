@@ -15,27 +15,7 @@ Now, we want to change this:
 
 4. Change the code that checks for permission to see if the permissions field list contains the current user's ID. //Done
 
-5. Finally, if the current user is the person who uploaded the file or the attorney on the case, add next to the link to the file a link or button "Access (n)" where n is the number of  people who have access. When that link is clicked, show a popup that allows them to edit the access list and re-save.
+5. Finally, if the current user is the person who uploaded the file or the attorney on the case, add next to the link to the file a link or button "Access (n)" where n is the number of  people who have access. When that link is clicked, show a popup that allows them to edit the access list and re-save. //Aborted
 
 Time: 2-3 days.
 
-
-if (strlen($comment['file_path']) > 0) {
-						if (in_array($_SESSION['user_id'], $case_permission)) {   //checking if the logged on user has permission or not
-							echo '<div class="comment-text-note">Uploaded a file: <strong>' ;
-								// echo '<a href="' . $uploads_dir . '/' . $comment['file_path'] . '" >' ;
-						
-								$s3link = S3::getAuthenticatedURL($bucket, $comment['file_path'], 3600) ;
-								echo '<a href="' . $s3link . '" >' ;
-								echo $comment['file_description'] ;
-								echo '</a>' ;
-								echo '</strong></div>' ;
-							
-						}
-						else {                                                   //file access denied 
-							echo '<div class="comment-text-note">Uploaded a file: ' ;
-								echo $comment['file_description'] ;
-								echo ' (Access Denied)</div>' ;
-							
-						}
-					}
