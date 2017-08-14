@@ -15,7 +15,6 @@ Now, we want to change this:
 
 4. Change the code that checks for permission to see if the permissions field list contains the current user's ID. //Done
 
-5. Finally, if the current user is the person who uploaded the file or the attorney on the case, add next to the link to the file a link or button "Access (n)" where n is the number of  people who have access. When that link is clicked, show a popup that allows them to edit the access list and re-save. //Aborted
+5. Finally, if the current user is the person who uploaded the file or the attorney on the case, add next to the link to the file a link or button "Access (n)" where n is the number of  people who have access. When that link is clicked, show a popup that allows them to edit the access list and re-save. //Done
 
 Time: 2-3 days.
-
