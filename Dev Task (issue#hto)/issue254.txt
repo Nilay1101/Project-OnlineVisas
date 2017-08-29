@@ -1,0 +1,7 @@
+Can we do a straight search/replace on RTF files?
+
+That would let business? users actually modify the input RTF files and include their own link codes using some syntax we set, e.g. {{beneficiary_name_first}} instead of getFieldLC("beneficiary_name_first") etc.
+
+If we can do this, let's set up a proof of concept.
+
+(Estimate 1 day)

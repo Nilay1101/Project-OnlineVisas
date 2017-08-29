@@ -1,0 +1,9 @@
+Come up with a way to assign particular stakeholders automatically on all new cases? (leads or petitions) for a Firm or an Organization.
+
+Right now, we hack it with a function ovAddSpecialStakeholders().
+
+Let's change this... If someone is a Firm or Org admin, when they go to their Firm/Org page, show a new table "Automatic Stakeholder Role" that lists all users who belong to that Firm/Org, with a drop-down for stakeholder role against each one. Also add "Do not add" as the initial setting.
+
+Any user that does have an automatic role set should be added automatically to any new leads or petitions started by that firm or org.
+
+(Estimate 1 day)

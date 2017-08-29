@@ -1,0 +1,5 @@
+Figure out how to support more than one signature on screen concurrently.
+
+Right now, I think it uses an ID to initialise the signature, and there should only be one elements of any ID on screen at any time, so we need a way to have multiple signatures with different link codes e.g. attorney_signature / beneficiary_signature on screen together, all saved to the database as currently done for the attorney signature.
+
+(Estimate 1 day)
