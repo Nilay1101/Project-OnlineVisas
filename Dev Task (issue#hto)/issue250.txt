@@ -6,4 +6,4 @@ Let's change this... If someone is a Firm or Org admin, when they go to their Fi
 
 Any user that does have an automatic role set should be added automatically to any new leads or petitions started by that firm or org.
 
-(Estimate 1 day)
+: Solved
