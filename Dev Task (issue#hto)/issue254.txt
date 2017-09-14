@@ -4,4 +4,4 @@ That would let business? users actually modify the input RTF files and include t
 
 If we can do this, let's set up a proof of concept.
 
-(Estimate 1 day)
+: Solved

@@ -1,0 +1,10 @@
+Give superusers ability to filter all cases by org / firm / referring firm (see Azania's email of Sep 4)
+
+If I am logged in as a SU, and looking at either Petitions / Leads views, show a button "Filter" .Click the button, show a popup form with filtering options.
+Options should be Organization / Firm / Referring Firm / Status...
+
+Important: You should be able to use multiple filtering options together.
+
+Then OK and Cancel buttons. OK will build a custom SQL statement and show the list. There should be a visual indicator that the list is filtered!
+
+(Estimate 1 week)
