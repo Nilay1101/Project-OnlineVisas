@@ -7,4 +7,4 @@ Important: You should be able to use multiple filtering options together.
 
 Then OK and Cancel buttons. OK will build a custom SQL statement and show the list. There should be a visual indicator that the list is filtered!
 
-(Estimate 1 week)
+(: Solved)
