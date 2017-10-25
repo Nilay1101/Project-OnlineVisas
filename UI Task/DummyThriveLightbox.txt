@@ -1,0 +1,28 @@
+This new UI design may be the start of a whole new, cleaner UI for Gateway.
+
+Menu page
+
+    Shows a series of panels. These could be tiles or horizontal. Or it could be a kind of map with milestones on it.
+    Each one should show if it's available, locked, complete. If available, is it partially complete?
+    We may either show an overall progress indicator, or we may prefer to show how % complete each step is.
+    Note, these steps are not the same as steps on a Gateway case. They're more like the tabs in a case. In fact, they may be equivalent to the steps we see under "Case Plan" (remember, this is an opportunity to revise the whole workflow, so we can suggest major changes).
+    The steps could vary from visa type to visa type... I think.
+    General UI stuff is that it will look like you're still on OnlineVisas.com, so we won't have your username, show/hide hints, but we may still need a Help link?
+    Use the following headings for your steps:
+        Step 1: Your information
+        Step 2: About the Petitioner
+        Step 3: About the Position
+        Step 4: About the Beneficiary
+        Step 5: Upload Supporting Documents
+        Step 6: Additional Questions
+        Step 7: Generate Your Documents (locked)
+    Those should be a good starting point for H-1B.
+
+Step page
+
+    This is what you would see if you clicked on any of the first 6 steps.
+    It will have fields to complete, and possibly file uploads, but should look much easier and nicer than the basic Gateway UI.
+    Do not show link codes.
+    Some fields may have an "Add another" option, which is equivalent to "Duplicate step".
+    Do now show any other options for steps.
+    Definitely need a nice way to see help, certainly at the whole page level, but also at the step level. This will need careful thought and design. Help could include videos you can click on to view.
