@@ -1,0 +1,82 @@
+1 Indicate the type of visa classification supported by this application Write classification symbol
+1 Contacts last family name
+2 First given name
+3 Middle names
+4 Contacts job title
+5 Address 1
+6 Address 2
+7 City
+8 State
+9 Postal code
+10 Country
+11 Province if applicable
+12 Telephone number
+13 Extension
+14 Fax Number
+15 EMail Address
+1 Legal business name
+2 Trade nameDoing Business As DBA if applicable
+3 Address 1
+4 Address 2
+5 City
+6 State
+7 Postal code
+8 Country
+9 Province if applicable
+10 Telephone number
+11 Extension
+12 Federal Employer Identification Number FEIN from IRS
+13 NAICS code must be at least 4digits
+undefined
+undefined_2
+undefined_3
+undefined_4
+undefined_5
+undefined_6
+undefined_7
+undefined_8
+undefined_9
+undefined_10
+4a Survey Name
+4b Survey date of publication
+1 Job Title
+2 Suggested SOC ONETOES code
+2a Suggested SOC ONETOES occupation title
+3 Job Title of Supervisor for this Position if applicable
+4 Does this position supervise the work of other employees
+will supervise
+undefined_11
+undefined_12
+5 Job duties Please provide a description of the duties to be performed with as much specificity as possible including details regarding the areasfields andor productsindustries involved A description of the job duties to be performed MUST begin in this space
+perform the job duties
+6a If Yes please provide details of the travel required such as the areas frequency and nature of the travel
+None
+High SchoolGED
+Associates
+Bachelors
+Master
+Doctorate PhD
+Other degree JD MD etc
+4a If Yes in question 4 specify the number of months of experience required
+4b Indicate the occupation required
+5 Special Requirements List specific skills licensescertificatescertifications and requirements of the job opportunity
+1 Worksite address 1
+2 Address 2
+3 City
+4 County
+5 StateDistrictTerritory
+6 Postal code
+undefined_16
+undefined_17
+7a If Yes identify the geographic places of employment indicating each metropolitan statistical area MSA or the independent cityiestownshipscountyies boroughsparishes and the corresponding states where work will be performed If necessary submit a second completed Form ETA9141 with a listing of the additional anticipated worksites Please note that wages cannot be provided for unspecifiedunanticipated locations
+Eb1a
+Eb1b
+2a If Yes in question 2 indicate the second US diplomadegree and the majors andor fields of study required
+2a If Yes in question 2 indicate the second US diplomadegree and the majors andor fields of study required#1
+3b Indicate the fieldsnames of training required May list more than one related field and more than one type
+3b Indicate the fieldsnames of training required May list more than one related field and more than one type#1
+3a If Yes in question 3 specify the number of months of training required
+3a If Yes in question 3 specify the number of months of training required#1
+undefined_13
+undefined_14
+undefined_15
